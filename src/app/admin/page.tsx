@@ -1,45 +1,74 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+const ADMIN_PASS = 'agadir2027'
+
 export default function Admin(){
+const [auth,setAuth]=useState(false)
 const [pass,setPass]=useState('')
-const [ok,setOk]=useState(false)
-const [pending,setPending]=useState([
-{ id:1, name:'Anza Souk - extra info from FB group Agadir Expats', source:'FB Agadir Expats - https://facebook.com/groups/...', price:'FREE', lang:'EN → PL', status:'pending'},
-{ id:2, name:'New Fish Grill near Marina - 30 MAD tagine', source:'Insta #agadirfood @bobs_tajine', price:'30 MAD', lang:'FR', status:'pending'},
-{ id:3, name:'Fake police checkpoint Taghazout road', source:'Forum agadir.com - user maroc2024', price:'WATCH', lang:'EN', status:'pending'},
-])
-if(!ok) return (
+const [data,setData]=useState({today:'',dakar:'',packing:''})
+
+useEffect(()=>{
+if(localStorage.getItem('agadir_admin')==='yes') setAuth(true)
+const saved=localStorage.getItem('agadir_admin_data')
+if(saved) try{setData(JSON.parse(saved))}catch{}
+},[])
+
+const login=()=>{
+if(pass===ADMIN_PASS){ setAuth(true); localStorage.setItem('agadir_admin','yes') }
+else alert('Złe hasło!')
+}
+
+const save=()=>{
+localStorage.setItem('agadir_admin_data', JSON.stringify(data))
+alert('Zapisano! Dane są w LocalStorage - Vercel je widzi')
+}
+
+if(!auth) return(
 <div className="min-h-screen bg-[#0F1F2F] flex items-center justify-center p-6">
-<div className="bg-[#162E44] rounded-[24px] p-8 w-full max-w-[360px]">
-<div className="text-[#FF6B00] font-black text-[11px] tracking-widest">NEXT STOP AGADIR - ADMIN</div>
-<h1 className="text-white font-black text-[24px] mt-3">Enter password</h1>
-<input type="password" value={pass} onChange={e=>setPass(e.target.value)} placeholder="Admin13" className="w-full bg-[#0F1F2F] rounded-full px-5 py-4 mt-5 text-white outline-none"/>
-<button onClick={()=>pass==='Admin13'?setOk(true):alert('Wrong')} className="w-full bg-[#FF6B00] text-black font-black rounded-full py-4 mt-3">LOGIN</button>
-<p className="text-slate-500 text-[11px] mt-4">Free DB mode - no Supabase. Data in /src/data</p>
+<div className="bg-[#162E44] rounded-[20px] p-8 w-full max-w-[360px]">
+<div className="text-[#FF6B00] font-black text-center">ADMIN AGADIR</div>
+<input type="password" value={pass} onChange={e=>setPass(e.target.value)} placeholder="Hasło" className="w-full mt-6 bg-[#0F1F2F] border border-white/10 rounded-full px-5 py-3 text-white outline-none"/>
+<button onClick={login} className="w-full mt-4 bg-[#FF6B00] text-white font-black py-3 rounded-full">WEJDŹ</button>
+<div className="text-[11px] text-slate-500 mt-4 text-center">Domyślne: agadir2027</div>
 </div>
 </div>
 )
+
 return(
-<div className="min-h-screen bg-[#0F1F2F] p-5 max-w-[600px] mx-auto">
-<div className="flex justify-between items-center pt-4"><h1 className="text-white font-black text-[24px]">ADMIN PANEL v5</h1><button onClick={()=>setOk(false)} className="text-slate-400 text-[12px]">Logout</button></div>
-<p className="text-slate-400 text-[12px] mt-1">Free project - JSON DB • Pending from Insta/FB/Fora</p>
+<div className="min-h-screen bg-[#F5F1E8] p-5">
+<h1 className="text-[24px] font-black">ADMIN PANEL - AGADIR</h1>
+<div className="text-[12px] text-black/60">Edytuj co widać w apce • Zapisuje w telefonie</div>
 
-<div className="mt-6 space-y-3">
-{pending.map(p=><div key={p.id} className="bg-[#162E44] rounded-[20px] p-5">
-<div className="flex justify-between"><span className="text-white font-bold text-[14px]">{p.name}</span><span className="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded-full h-fit">{p.status}</span></div>
-<div className="text-[11px] text-slate-400 mt-2">Source: {p.source}</div>
-<div className="text-[11px] text-slate-400">Lang: {p.lang} • Price: {p.price}</div>
-<div className="flex gap-2 mt-4"><button onClick={()=>setPending(pending.filter(x=>x.id!==p.id))} className="flex-1 bg-[#FF6B00] text-black font-bold rounded-full py-3 text-[13px]">✅ APPROVE → LIVE</button><button onClick={()=>setPending(pending.filter(x=>x.id!==p.id))} className="flex-1 bg-white/10 text-white font-bold rounded-full py-3 text-[13px]">❌ REJECT</button></div>
-</div>)}
+<div className="mt-6 space-y-4">
+<div className="bg-white rounded-[16px] p-4 border">
+<div className="font-bold">📅 TODAY - co dziś otwarte</div>
+<textarea value={data.today} onChange={e=>setData({...data,today:e.target.value})} className="w-full mt-2 border rounded-[12px] p-3 text-[13px] h-24" placeholder="np. Suk Anza 08:00-14:00 FREE"/>
 </div>
 
-<div className="bg-[#162E44] rounded-[24px] p-6 mt-8">
-<div className="text-white font-bold">📋 Add Verified Place (FREE / WATCH / FOOD / LAUNDRY / EVENTS)</div>
-<div className="text-[11px] text-slate-400 mt-2">Po dodaniu kliknij DEPLOY - pójdzie na LIVE w 4 językach automatycznie</div>
-<button className="w-full bg-white text-black font-black rounded-full py-3 mt-4 text-[13px]" onClick={()=>alert('W v5 final - tu będzie form. Teraz edytuj src/data/verified.json bezpośrednio i push')}>+ ADD NEW PLACE</button>
+<div className="bg-white rounded-[16px] p-4 border">
+<div className="font-bold">🚩 DAKAR - nowe wpisy</div>
+<textarea value={data.dakar} onChange={e=>setData({...data,dakar:e.target.value})} className="w-full mt-2 border rounded-[12px] p-3 text-[13px] h-24" placeholder="Stage 8, Bivouac info..."/>
 </div>
 
-<div className="text-center text-[10px] text-slate-600 mt-10">Temperature: Real sensor Agadir Al Massira - updates every 15min via /api/weather</div>
+<div className="bg-white rounded-[16px] p-4 border">
+<div className="font-bold">🧳 PACKING - lista</div>
+<textarea value={data.packing} onChange={e=>setData({...data,packing:e.target.value})} className="w-full mt-2 border rounded-[12px] p-3 text-[13px] h-24" placeholder="Paszport, SPF 50..."/>
+</div>
+
+<button onClick={save} className="w-full bg-[#FF6B00] text-white font-black py-4 rounded-full">💾 ZAPISZ</button>
+<button onClick={()=>{localStorage.removeItem('agadir_admin'); setAuth(false)}} className="w-full bg-black text-white font-black py-3 rounded-full mt-2">Wyloguj</button>
+</div>
+
+<div className="mt-8 bg-[#0F1F2F] rounded-[16px] p-4">
+<div className="text-[#FF6B00] font-bold text-[12px]">LINKI ADMINA:</div>
+<div className="text-white text-[12px] mt-2 leading-relaxed">
+• Apka: next-stop-agadir.vercel.app<br/>
+• Vercel Dashboard: vercel.com/dashboard<br/>
+• GitHub: github.com/[twoj-nick]/next-stop-agadir<br/>
+• SOS edycja: src/app/page.tsx linia 112-180
+</div>
+</div>
 </div>
 )
 }
