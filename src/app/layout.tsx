@@ -1,9 +1,9 @@
+import './globals.css'
 export const metadata = {
 title: 'NEXT STOP, AGADIR.',
 description: 'Dakar 2027 Agadir',
 manifest: '/manifest.json',
 themeColor: '#FF6B00',
-appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: 'AGADIR' }
 }
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 return (
@@ -13,7 +13,7 @@ return (
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 </head>
-<body style={{margin:0, background:'#0F1F2F'}}>{children}</body>
+<body style={{margin:0, background:'#0A1B2E'}}>{children}</body>
 </html>
 )
 }
