@@ -1,0 +1,22 @@
+[
+  {"id":1,"name":"Taghazout Surf Beach","category":"surf","description":"Best surf spot for beginners and pros. Long sandy beach with consistent waves.","lat":30.545,"lng":-9.71,"affiliateLink":"https://www.getyourguide.com/s/?q=taghazout-surf"},
+  {"id":2,"name":"Panorama Surf","category":"surf","description":"Legendary point break with perfect lefts. Works best on north swell.","lat":30.55,"lng":-9.72,"affiliateLink":"https://www.getyourguide.com/s/?q=panorama-surf"},
+  {"id":3,"name":"Anza Beach","category":"surf","description":"Urban surf spot close to Agadir. Great for sunset sessions.","lat":30.447,"lng":-9.643,"affiliateLink":"https://www.getyourguide.com/s/?q=anza-beach"},
+  {"id":4,"name":"Banana Point","category":"surf","description":"Mellow longboard wave, perfect for longboarders.","lat":30.5,"lng":-9.69,"affiliateLink":"https://www.getyourguide.com/s/?q=banana-point"},
+  {"id":5,"name":"Killer Point","category":"surf","description":"Powerful reef break for experienced surfers only.","lat":30.53,"lng":-9.7,"affiliateLink":"https://www.getyourguide.com/s/?q=killer-point"},
+  {"id":6,"name":"Cafe Hype","category":"cafe","description":"Best coffee in Taghazout with ocean view. Laptop friendly.","lat":30.543,"lng":-9.708,"affiliateLink":"https://maps.google.com/?q=Cafe+Hype+Taghazout"},
+  {"id":7,"name":"Worlds Cafe","category":"cafe","description":"Healthy bowls and specialty coffee. Surfer hangout.","lat":30.544,"lng":-9.709,"affiliateLink":"https://maps.google.com/?q=Worlds+Cafe+Taghazout"},
+  {"id":8,"name":"Amouja Cafe","category":"cafe","description":"Traditional Moroccan tea with modern twist.","lat":30.42,"lng":-9.6,"affiliateLink":"https://maps.google.com/?q=Amouja+Cafe+Agadir"},
+  {"id":9,"name":"La Source","category":"restaurant","description":"French-Moroccan fusion, best tagine in town.","lat":30.423,"lng":-9.598,"affiliateLink":"https://www.booking.com/city/ma/agadir.html"},
+  {"id":10,"name":"Bab Agadir","category":"restaurant","description":"Authentic local food, cheap and delicious.","lat":30.425,"lng":-9.6,"affiliateLink":"https://www.booking.com/city/ma/agadir.html"},
+  {"id":11,"name":"Little Havana","category":"restaurant","description":"Grill and cocktails with live music.","lat":30.43,"lng":-9.61,"affiliateLink":"https://www.booking.com/city/ma/agadir.html"},
+  {"id":12,"name":"La Scala","category":"restaurant","description":"Italian pizza with Moroccan ingredients.","lat":30.422,"lng":-9.597,"affiliateLink":"https://www.booking.com/city/ma/agadir.html"},
+  {"id":13,"name":"Souk El Had","category":"shopping","description":"Huge traditional market, everything from spices to carpets.","lat":30.413,"lng":-9.588,"affiliateLink":"https://www.getyourguide.com/s/?q=souk+agadir"},
+  {"id":14,"name":"Agadir Marina","category":"shopping","description":"Modern marina with shops and sunset walks.","lat":30.427,"lng":-9.618,"affiliateLink":"https://www.getyourguide.com/s/?q=agadir+marina"},
+  {"id":15,"name":"Paradise Valley","category":"trip","description":"Stunning oasis with natural pools. Day trip must.","lat":30.588,"lng":-9.53,"affiliateLink":"https://www.getyourguide.com/s/?q=paradise+valley"},
+  {"id":16,"name":"Camel Ride","category":"trip","description":"Sunset camel ride on Agadir beach.","lat":30.42,"lng":-9.62,"affiliateLink":"https://www.getyourguide.com/s/?q=camel+ride+agadir"},
+  {"id":17,"name":"Sahara Desert Trip","category":"trip","description":"2-day desert adventure from Agadir.","lat":30.4,"lng":-9.5,"affiliateLink":"https://www.getyourguide.com/s/?q=sahara+desert+agadir"},
+  {"id":18,"name":"Imouzzer Waterfall","category":"trip","description":"Hidden waterfall near honey village.","lat":30.67,"lng":-9.48,"affiliateLink":"https://www.getyourguide.com/s/?q=imouzzer"},
+  {"id":19,"name":"Crocoparc","category":"trip","description":"Botanical park with crocodiles, great for families.","lat":30.38,"lng":-9.52,"affiliateLink":"https://www.getyourguide.com/s/?q=crocoparc"},
+  {"id":20,"name":"Kasbah Agadir Oufella","category":"trip","description":"Old fortress with best view of whole Agadir bay.","lat":30.429,"lng":-9.625,"affiliateLink":"https://www.getyourguide.com/s/?q=kasbah+agadir"}
+]
