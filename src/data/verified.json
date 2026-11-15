@@ -1,0 +1,5 @@
+[
+  {"name":{"pl":"Suk Anza - Poniedziałek","en":"Anza Weekly Souk - Monday","fr":"Souk Anza - Lundi","ar":"سوق أنزا - الاثنين"},"price":"FREE","time":"Mon 08:00-14:00","cat":"Events","loc":"Anza"},
+  {"name":{"pl":"Pralnia Eco Wash","en":"Eco Wash Laundry","fr":"Laverie Eco","ar":"مصبغة إيكو"},"price":"30 MAD/KG","time":"09:00-19:00","cat":"Laundry","loc":"Talborjt"},
+  {"name":{"pl":"Ostrzeżenie: Bransoletka za darmo","en":"CAUTION: Free Bracelet Scam","fr":"ATTENTION: Bracelet gratuit","ar":"تحذير: سوار مجاني"},"price":"SCAM","time":"All day","cat":"Watch","loc":"Plage"}
+]
